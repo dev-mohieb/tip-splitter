@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator App</title>
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="output.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+    </style>
+    <script src="app.js" defer></script>
+  </head>
+  <body
+    class="select-none font-space-mono bg-light-grayish-cyan flex flex-col min-h-screen justify-start items-center w-full"
+  >
+    <section class="m-6" aria-label="logo">
+      <img
+      class="w-16"
+      src="images/logo.svg" 
+      alt="SPLITTER LOGO">
+    </section>
+
+    <main
+      class="bg-white rounded-xl gap-8 overflow-hidden flex container flex-col sm:flex-row w-full p-8 max-w-[750px] min-w-[340px]"
+    >
+      <section class="w-full min-w-[255px]">
+        <section class="my-4 flex flex-col">
+          <article class="flex justify-between items-center">
+            <label
+              for="bill-input"
+              class="text-sm outline-offset-0 text-grayish-cyan"
+            >
+              Bill
+            </label>
+            <p id="bill-zero-notice" class="text-sm text-red-500"></p>
+          </article>
+            <div class="my-2 flex items-center relative">
+              <input
+                class="transition-all w-full text-2xl text-very-dark-cyan text-right px-3 py-1 select-auto bg-very-light-grayish-cyan rounded outline-none outline-offset-0 focus:outline-primary-strong-cyan"
+                type="number"
+                name="bill"
+                id="bill-input"
+                placeholder="0"
+              />
+              <img 
+                class="absolute px-3 py-2 bg-very-light-grayish-cyan rounded-l"
+                src="images/icon-dollar.svg" alt="">
+              </div>
+            </div>
+        </section>
+        <section class="my-4">
+          <article>
+            <label class="text-sm text-grayish-cyan"> Select Tip % </label>
+            <section class="my-2 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <label
+                for="5"
+                class="cursor-pointer z transition-all flex justify-center items-center py-2 text-white bg-very-dark-cyan sm:hover:bg-light-grayish-cyan sm:hover:text-very-dark-cyan text-2xl rounded outline-none">
+                <input
+                class="hidden" 
+                type="radio" 
+                name="tips" 
+                id="5" 
+                value="5">
+                5%
+              </label>
+
+              <label
+                for="10"
+                class="cursor-pointer z transition-all flex justify-center items-center py-2 text-white bg-very-dark-cyan sm:hover:bg-light-grayish-cyan sm:hover:text-very-dark-cyan text-2xl rounded outline-none">
+                <input
+                class="hidden" 
+                type="radio" 
+                name="tips" 
+                id="10" 
+                value="10">
+                10%
+              </label>
+
+              <label
+                for="15"
+                class="cursor-pointer z transition-all flex justify-center items-center py-2 text-white bg-very-dark-cyan sm:hover:bg-light-grayish-cyan sm:hover:text-very-dark-cyan text-2xl rounded outline-none">
+                <input
+                class="hidden" 
+                type="radio" 
+                name="tips" 
+                id="15" 
+                value="15">
+                15%
+              </label>
+
+              <label
+                for="25"
+                class="cursor-pointer z transition-all flex justify-center items-center py-2 text-white bg-very-dark-cyan sm:hover:bg-light-grayish-cyan sm:hover:text-very-dark-cyan text-2xl rounded outline-none">
+                <input
+                class="hidden" 
+                type="radio" 
+                name="tips" 
+                id="25" 
+                value="25">
+                25%
+              </label>
+
+              <label
+                for="50"
+                class="cursor-pointer z transition-all flex justify-center items-center py-2 text-white bg-very-dark-cyan sm:hover:bg-light-grayish-cyan sm:hover:text-very-dark-cyan text-2xl rounded outline-none">
+                <input
+                class="hidden" 
+                type="radio" 
+                name="tips" 
+                id="50" 
+                value="50">
+                50%
+              </label>
+              
+              <input
+                id="custom-per"
+                class="bg-very-light-grayish-cyan outline-none text-very-dark-cyan focus:outline-primary-strong-cyan placeholder:text-dark-grayish-cyan text-center text-xl transition-all rounded outline-offset-0"
+                type="number"
+                placeholder="Custom"
+                max="100"
+                min="5"
+                maxlength="3"
+                step="5"
+              />
+            </section>
+          </article>
+        </section>
+        <section>
+          <section class="my-4 flex flex-col">
+            <article class="flex justify-between items-center">
+              <label
+                for="people-input"
+                class="text-sm outline-offset-0 text-grayish-cyan"
+              >
+                Number of People
+              </label>
+              <p id="people-zero-notice" class="text-sm text-red-500"></p>
+            </article>
+              <div class="my-2 flex items-center relative">
+                <input
+                  class="transition-all text-2xl w-full text-very-dark-cyan text-right px-3 py-1 select-auto bg-very-light-grayish-cyan rounded outline-none outline-offset-0 focus:outline-primary-strong-cyan"
+                  type="number"
+                  name="people"
+                  id="people-input"
+                  placeholder="0"
+                />
+                <img 
+                class="absolute p-3 bg-very-light-grayish-cyan rounded-l"
+                src="images/icon-person.svg" alt="">
+              </div>
+          </section>
+        </section>
+      </section>
+
+      <section
+        class="w-full min-w-[255px] bg-very-dark-cyan rounded-lg py-8 px-6 sm:p-8 flex flex-col justify-between"
+      >
+        <article>
+          <div class="flex justify-between items-center mt-2 sm:mt-4">
+            <div class="flex flex-col">
+              <label class="text-md text-white">Tip Amount</label>
+              <label class="text-xs text-grayish-cyan">/ person</label>
+            </div>
+            <div>
+              <label id="tip-el" class="text-4xl text-primary-strong-cyan"
+                >$0.00</label
+              >
+            </div>
+          </div>
+          <div class="flex justify-between items-center mt-6 sm:mt-12">
+            <div class="flex flex-col">
+              <label class="text-md text-white">Total</label>
+              <label class="text-xs text-grayish-cyan">/ person</label>
+            </div>
+            <div>
+              <label id="total-el" class="text-4xl max-w-[220px] text-primary-strong-cyan"
+                >$0.00</label
+              >
+            </div>
+          </div>
+        </article>
+        <button
+          id="reset-btn"
+          disabled
+          class="w-full py-2 rounded-md mt-8 bg-dark-grayish-cyan text-very-dark-cyan transition-all"
+        >
+          RESET
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
