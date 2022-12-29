@@ -181,7 +181,7 @@ function resetAll() {
     tipButtonLabel.classList.add("sm:hover:text-very-dark-cyan");
     tipButtonLabel.classList.replace("text-very-dark-cyan", "text-white");
   }
-
+  chosenTip = '';
   total = "";
   totalEl.textContent = "$0.00";
   tip = "";
